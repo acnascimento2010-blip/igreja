@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casamento - 16 de Janeiro</title>
+    <title>Cerimônia Religiosa - 16 de Janeiro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,20 +12,20 @@
     <header>
         <img src="img/monograma.png" alt="Monograma André e Layla" class="monograma">
         <h1>Layla e André</h1>
-        <p>16 de Janeiro de 2027</p>
+        <p>A Bênção Nupcial — 16 de Janeiro de 2027</p>
     </header>
 
-    <!-- INFORMAÇÕES DO EVENTO (CERIMÔNIA E RECEPÇÃO) -->
+    <!-- INFORMAÇÕES DO EVENTO (APENAS CERIMÔNIA) -->
     <section id="informacoes">
-        <h2>Onde e Quando</h2>
+        <h2>A Cerimônia</h2>
+        <p style="text-align: center; margin-bottom: 30px; color: #555;">Queridos amigos e familiares, é com imensa alegria que convidamos vocês para testemunharem o nosso sim perante o altar.</p>
         
-        <div class="grid-locais">
-            <!-- BLOCO DA CERIMÔNIA -->
-            <div class="card-local">
-                <h3>💍 Cerimônia</h3>
+        <div style="display: flex; justify-content: center;">
+            <div class="card-local" style="max-width: 500px; width: 100%;">
+                <h3>💍 Cerimônia Religiosa</h3>
                 <p><strong>Local:</strong> Igreja São Sebastião</p>
                 <p><strong>Endereço:</strong> [Endereço Completo da Igreja]</p>
-                <p><strong>Horário:</strong> Dia 16 de janeiro às 14:00</p>
+                <p><strong>Horário:</strong> Dia 16 de janeiro às 14:00 (Sugerimos chegar com 20 min de antecedência)</p>
                 
                 <!-- Botão do Google Maps -->
                 <a href="https://maps.google.com/?q=Igreja+Sao+Sebastiao+Juiz+de+Fora" target="_blank" class="btn-maps">
@@ -34,12 +34,11 @@
             </div>
         </div>
     </section>
-    
 
     <!-- SEÇÃO DA LISTA DE PRESENTES -->
     <section id="presentes">
         <h2>Lista de Presentes</h2>
-        <p>Sua presença é o nosso maior presente! Mas, se desejar contribuir com os nossos planos, clique em um dos itens abaixo para ver o QR Code via PIX:</p>
+        <p>Sua presença na nossa cerimônia é o maior presente que poderíamos receber! Mas, se desejar contribuir com os nossos planos, clique em um dos itens abaixo para ver o QR Code via PIX:</p>
         
         <!-- GRADE DE PRESENTES -->
         <div class="grid-presentes">
@@ -114,13 +113,13 @@
             </div>
         </div>
         
-        <div style="margin-top: 30px; font-size: 0.95em; color: #555;">
+        <div style="margin-top: 30px; font-size: 0.95em; color: #555; text-align: center;">
             <p><strong>Chave PIX (E-mail):</strong> acnascimento2010@gmail.com</p>
             <p><strong>Favorecido:</strong> André Cardozo do Nascimento</p>
         </div>
     </section>
 
-    <!-- JANELA FLUTUANTE DO QR CODE (Fora de qualquer seção, perfeitamente centralizada) -->
+    <!-- JANELA FLUTUANTE DO QR CODE -->
     <div id="modal-presente" class="modal-overlay">
         <div class="modal-content">
             <span class="fechar-modal" onclick="fecharModal()">&times;</span>
@@ -135,101 +134,6 @@
 
     <!-- SCRIPTS -->
     <script>
-        const limites = {
-            "Fátima Nascimento": 0, "Júlio Nascimento": 0, "Bárbara Nascimento": 1,
-            "Tânia Cardozo": 0, "Brasilina Cardozo": 0, "Julio Cardozo": 1,
-            "Lenardo Nascimento": 0, "Carla Nascimento": 0, "João Nascimento": 0,
-            "Ronaldo Nascimento": 0, "Elizete Nascimento": 0, "Débora Nascimento": 1,
-            "Gustavo Bertini": 1, "Lucas Amorim": 1, "João Calderano": 1,
-            "João Vitor Soares Pinto": 1, "Vagner Lima": 1, "Pedro Cabral Ribeiro": 1,
-            "José Raisson": 1, "Gabriel Fortes": 1, "Pedro Estrada": 1,
-            "Gilvania Crovatto da Costa": 0, "Sergio Luis da Costa": 0,
-            "Luis Felipe Crovatto (padrinho)": 0, "Leonardo Crovatto (padrinho)": 0,
-            "Aparecida Sevidanes Crovatto": 0, "Gilson Sevidanes Crovatto": 0, "Gilsara Aparecida Crovatto": 0,
-            "André Luis da Costa": 0, "Aline da Costa": 0, "Felipe da Costa": 0, "Bernardo da Costa": 0,
-            "Marco Aurélio da Costa": 0, "Tereza da Costa": 0, "João Victor da Costa": 1,
-            "Lia Borges (madrinha)": 1, "Thamiris Crovato (madrinha)": 1, "Laura Mattos": 0,
-            "Loren Mylena": 0, "Ramon Marques": 0, "Gabrielle Martins": 1, 
-            "Marcela Ruback": 0, "Igor Delgado": 0, "Gabriela Ruback": 0, "Alice Ruback": 0, 
-            "Tatiane Santos": 0, "Breno Nogueira": 0, "Elizabeth Francisco": 0, "Marcelo Carvalho": 0, 
-            "Ângela Francisco": 0, "Alexandre Santos": 0, "Victor Francisco": 0, "Rafael Dias": 0, 
-            "Bruno Carvalho": 0, "Brunno Mendonça": 0, "João Roberto": 0, "Susana": 0, 
-            "Pe João Paulo Dias": 0, "Pe Everton Fernandes": 0, "Pe Leonardo José": 0, "Pe Everaldo Sales": 0
-        };
-
-        const inputNome = document.getElementById('nome');
-        const inputAcompanhantes = document.getElementById('acompanhantes');
-        const aviso = document.getElementById('aviso-acompanhantes');
-        const btnConfirmar = document.getElementById('btn-confirmar');
-        
-        inputNome.addEventListener('input', function() {
-            const nomeSelecionado = inputNome.value.trim();
-            
-            if (localStorage.getItem('confirmado_' + nomeSelecionado)) {
-                inputAcompanhantes.max = 0;
-                inputAcompanhantes.value = 0;
-                inputAcompanhantes.readOnly = true;
-                aviso.innerText = "Você já confirmou presença! Obrigado.";
-                aviso.style.color = "#2e7d32";
-                btnConfirmar.disabled = true;
-                btnConfirmar.style.backgroundColor = "#ccc";
-                return;
-            }
-
-            btnConfirmar.disabled = false;
-            btnConfirmar.style.backgroundColor = "#4a4238";
-
-            if (limites.hasOwnProperty(nomeSelecionado)) {
-                const limite = limites[nomeSelecionado];
-                inputAcompanhantes.max = limite; 
-                if (limite === 0) {
-                    inputAcompanhantes.value = 0;
-                    inputAcompanhantes.readOnly = true; 
-                    aviso.innerText = "Seu convite é individual/fechado (sem acompanhantes extras).";
-                    aviso.style.color = "#8b6f56";
-                } else {
-                    inputAcompanhantes.readOnly = false;
-                    aviso.innerText = "Você pode levar até " + limite + " acompanhante. Se for sozinho(a), deixe 0.";
-                    aviso.style.color = "#4a4238";
-                }
-            } else {
-                inputAcompanhantes.max = 0;
-                inputAcompanhantes.value = 0;
-                inputAcompanhantes.readOnly = true;
-                aviso.innerText = "Selecione um nome válido na lista para habilitar.";
-                aviso.style.color = "#666";
-            }
-        });
-
-        const form = document.getElementById('form-presenca');
-        const mensagemSucesso = document.getElementById('mensagem-sucesso');
-        const textoInstrucao = document.getElementById('texto-instrucao');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            btnConfirmar.innerText = "Enviando...";
-            btnConfirmar.style.backgroundColor = "#8b6f56";
-            btnConfirmar.disabled = true;
-
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                mode: 'no-cors' 
-            }).then(() => {
-                const nomeConfirmado = inputNome.value.trim();
-                localStorage.setItem('confirmado_' + nomeConfirmado, 'sim');
-
-                form.style.display = 'none';
-                if(textoInstrucao) textoInstrucao.style.display = 'none';
-                mensagemSucesso.style.display = 'block';
-            }).catch(() => {
-                alert("Houve um erro na conexão. Tente novamente.");
-                btnConfirmar.innerText = "Confirmar";
-                btnConfirmar.disabled = false;
-                btnConfirmar.style.backgroundColor = "#4a4238";
-            });
-        });
-
         function abrirModal(titulo, imagemQr, valor) {
             document.getElementById('modal-titulo').innerText = titulo;
             document.getElementById('modal-img-qr').src = 'img/' + imagemQr;
