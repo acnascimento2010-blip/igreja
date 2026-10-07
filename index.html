@@ -32,69 +32,9 @@
                     📍 Ver no Google Maps
                 </a>
             </div>
-
-            <!-- BLOCO DA RECEPÇÃO -->
-            <div class="card-local">
-                <h3>🥂 Recepção</h3>
-                <p><strong>Local:</strong> [Nome do Local da Festa]</p>
-                <p><strong>Endereço:</strong> [Endereço Completo da Recepção]</p>
-                <p><strong>Horário:</strong> Logo após a cerimônia</p>
-                
-                <!-- Botão do Google Maps -->
-                <a href="https://maps.google.com/?q=Juiz+de+Fora+MG" target="_blank" class="btn-maps">
-                    📍 Ver no Google Maps
-                </a>
-            </div>
         </div>
     </section>
     
-    <!-- FORMULÁRIO DE CONFIRMAÇÃO (RSVP) -->
-    <section id="rsvp">
-        <h2>Confirme sua Presença</h2>
-        
-        <!-- TELA DE SUCESSO -->
-        <div id="mensagem-sucesso" style="display: none; text-align: center;">
-            <h3 style="color: #4a4238; font-size: 1.8em; margin-bottom: 10px;">✔ Presença confirmada!</h3>
-            <p style="font-size: 1.1em; color: #555;">Ficamos muito felizes que você celebrará conosco no dia 16 de Janeiro!</p>
-        </div>
-
-        <form id="form-presenca" action="https://script.google.com/macros/s/AKfycbwj4uhJXR2bwpahr31Ow3T9sC-HjcrRc1SSSlid052kKQRHS6xcbVQyKBZFeJVFziYA6g/exec" method="POST">
-            <p id="texto-instrucao">Por favor, confirme até o dia 20 de dezembro.</p>
-            
-            <label for="nome">Encontre seu nome na lista:</label><br>
-            <input type="text" id="nome" name="nome" list="lista-convidados" placeholder="Comece a digitar..." required autocomplete="off"><br><br>
-
-            <datalist id="lista-convidados">
-                <!-- Convidados André -->
-                <option value="Fátima Nascimento"><option value="Júlio Nascimento"><option value="Bárbara Nascimento">
-                <option value="Tânia Cardozo"><option value="Brasilina Cardozo"><option value="Julio Cardozo">
-                <option value="Lenardo Nascimento"><option value="Carla Nascimento"><option value="João Nascimento">
-                <option value="Ronaldo Nascimento"><option value="Elizete Nascimento"><option value="Débora Nascimento">
-                <option value="Gustavo Bertini"><option value="Lucas Amorim"><option value="João Calderano">
-                <option value="João Vitor Soares Pinto"><option value="Vagner Lima"><option value="Pedro Cabral Ribeiro">
-                <option value="José Raisson"><option value="Gabriel Fortes"><option value="Pedro Estrada">
-                <!-- Convidados Layla -->
-                <option value="Gilvania Crovatto da Costa"><option value="Sergio Luis da Costa">
-                <option value="Luis Felipe Crovatto (padrinho)"><option value="Leonardo Crovatto (padrinho)">
-                <option value="Aparecida Sevidanes Crovatto"><option value="Gilson Sevidanes Crovatto"><option value="Gilsara Aparecida Crovatto">
-                <option value="André Luis da Costa"><option value="Aline da Costa"><option value="Felipe da Costa"><option value="Bernardo da Costa">
-                <option value="Marco Aurélio da Costa"><option value="Tereza da Costa"><option value="João Victor da Costa">
-                <option value="Lia Borges (madrinha)"><option value="Thamiris Crovato (madrinha)"><option value="Laura Mattos">
-                <option value="Loren Mylena"><option value="Ramon Marques"><option value="Gabrielle Martins">
-                <option value="Marcela Ruback"><option value="Igor Delgado"><option value="Gabriela Ruback"><option value="Alice Ruback">
-                <option value="Tatiane Santos"><option value="Breno Nogueira"><option value="Elizabeth Francisco"><option value="Marcelo Carvalho">
-                <option value="Ângela Francisco"><option value="Alexandre Santos"><option value="Victor Francisco"><option value="Rafael Dias">
-                <option value="Bruno Carvalho"><option value="Brunno Mendonça"><option value="João Roberto"><option value="Susana">
-                <option value="Pe João Paulo Dias"><option value="Pe Everton Fernandes"><option value="Pe Leonardo José"><option value="Pe Everaldo Sales">
-            </datalist>
-
-            <label for="acompanhantes">Número de Acompanhantes:</label><br>
-            <input type="number" id="acompanhantes" name="acompanhantes" min="0" max="0" value="0" required>
-            <small id="aviso-acompanhantes" style="color: #666; display: block; margin-top: -15px; margin-bottom: 20px;">Selecione seu nome primeiro.</small>
-
-            <button type="submit" id="btn-confirmar">Confirmar</button>
-        </form>
-    </section>
 
     <!-- SEÇÃO DA LISTA DE PRESENTES -->
     <section id="presentes">
