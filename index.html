@@ -1,338 +1,336 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layla e André - 16 de Janeiro de 2027</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Estilos específicos para a Página de Boas-Vindas / Carta */
-        #pagina-carta {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/header-bg.jpg') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layla e André - 16 de Janeiro de 2027</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* Estilos específicos para a Página de Boas-Vindas / Carta */
+#pagina-carta {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/header-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+}
 
-        .carta-card {
-            background: rgba(255, 255, 255, 0.95);
-            color: #333;
-            max-width: 650px;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            text-align: left;
-            margin-bottom: 20px;
-        }
+.carta-card {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    max-width: 650px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: left;
+    margin-bottom: 20px;
+}
 
-        .carta-card h1 {
-            font-family: 'Cormorant Garamond', serif;
-            text-align: center;
-            color: #2c3e50;
-            margin-top: 0;
-            font-size: 2.5rem;
-        }
+.carta-card h1 {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 2.5rem;
+}
 
-        .carta-card p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            color: #444;
-        }
+.carta-card p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: #444;
+}
 
-        .assinatura {
-            text-align: right;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-style: italic;
-            color: #b89753;
-            margin-top: 30px;
-        }
+.assinatura {
+    text-align: right;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #b89753;
+    margin-top: 30px;
+}
 
-        .btn-entrar {
-            background-color: #b89753;
-            color: white;
-            border: none;
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
+.btn-entrar {
+    background-color: #b89753;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
 
-        .btn-entrar:hover {
-            background-color: #9f8045;
-            transform: translateY(-2px);
-        }
+.btn-entrar:hover {
+    background-color: #9f8045;
+    transform: translateY(-2px);
+}
 
-        /* Oculta o conteúdo principal até que o botão seja clicado */
-        #conteudo-principal {
-            display: none;
-        }
+/* Oculta o conteúdo principal até que o botão seja clicado */
+#conteudo-principal {
+    display: none;
+}
 
-        /* Estilos adicionais para o Pix Copia e Cola */
-        .pix-copia-cola-box {
-            background-color: #f7f5f0;
-            border: 1px dashed #b89753;
-            padding: 8px;
-            border-radius: 6px;
-            margin: 10px 0;
-            word-break: break-all;
-            font-family: monospace;
-            font-size: 0.8em;
-            color: #333;
-            max-height: 70px;
-            overflow-y: auto;
-            text-align: left;
-        }
-        .btn-copiar {
-            background-color: #2e7d32;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.95em;
-            transition: background 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 5px;
-            width: 100%;
-            justify-content: center;
-        }
-        .btn-copiar:hover {
-            background-color: #235d26;
-        }
-    </style>
+/* Estilos adicionais para o botão e caixa de Pix copia e cola */
+.pix-copia-cola-box {
+    background-color: #f7f5f0;
+    border: 1px dashed #b89753;
+    padding: 8px;
+    border-radius: 6px;
+    margin: 10px 0;
+    word-break: break-all;
+    font-family: monospace;
+    font-size: 0.8em;
+    color: #333;
+    max-height: 70px;
+    overflow-y: auto;
+    text-align: left;
+}
+.btn-copiar {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95em;
+    transition: background 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+    width: 100%;
+    justify-content: center;
+}
+.btn-copiar:hover {
+    background-color: #235d26;
+}
+</style>
 </head>
 <body>
 
-    <!-- ETAPA 1: PÁGINA DA CARTA / BOAS-VINDAS -->
-    <div id="pagina-carta">
-        <div class="carta-card">
-            <h1>Layla & André</h1>
-            <p>Queridos familiares e amigos,</p>
-            <p>Antes de tudo, queremos agradecer a cada um de vocês por fazer parte da nossa história. Por todo o carinho, por tudo o que fizeram por nós até aqui e, principalmente, por cada momento que compartilhamos ao longo da vida.</p>
-            <p>Agora, estamos prestes a viver um dos capítulos mais especiais da nossa história: o início da nossa própria família.</p>
-            <p>E, como a vida é cheia de surpresas, esse novo caminho vai começar um pouquinho mais longe do que imaginávamos. Não será no bairro ao lado, nem na cidade vizinha, mas a aproximadamente 4.998 km de distância!</p>
-            <p>Para quem ainda não sabe, nosso novo lar será em <strong>Boa Vista, Roraima</strong>.</p>
-            <p>É uma mudança e tanto, cheia de expectativas, sonhos e novos desafios. Mas também é a realização de algo muito especial: construir a nossa vida juntos.</p>
-            <p>Por isso, queremos aproveitar cada instante dessa celebração ao lado de vocês. Mais do que comemorar o nosso casamento, queremos celebrar o amor, os laços que construímos e todas as pessoas que, de alguma forma, nos ajudaram a chegar até aqui.</p>
-            <p>A distância pode até mudar os encontros, mas nunca o carinho e o lugar que cada um de vocês ocupa em nossas vidas.</p>
-            <p>Fica aqui o nosso mais sincero obrigado por fazerem parte dessa história.</p>
-            <p>E, em vez de uma despedida, preferimos dizer: até daqui a pouco!</p>
-            
-            <div class="assinatura">
-                Com todo o nosso carinho,<br>
-                Layla e André
-            </div>
+<!-- ETAPA 1: PÁGINA DA CARTA / BOAS-VINDAS -->
+<div id="pagina-carta">
+    <div class="carta-card">
+        <h1>Layla & André</h1>
+        <p>Queridos familiares e amigos,</p>
+        <p>Antes de tudo, queremos agradecer a cada um de vocês por fazer parte da nossa história. Por todo o carinho, por tudo o que fizeram por nós até aqui e, principalmente, por cada momento que compartilhamos ao longo da vida.</p>
+        <p>Agora, estamos prestes a viver um dos capítulos mais especiais da nossa história: o início da nossa própria família.</p>
+        <p>E, como a vida é cheia de surpresas, esse novo caminho vai começar um pouquinho mais longe do que imaginávamos. Não será no bairro ao lado, nem na cidade vizinha, mas a aproximadamente 4.998 km de distância!</p>
+        <p>Para quem ainda não sabe, nosso novo lar será em <strong>Boa Vista, Roraima</strong>.</p>
+        <p>É uma mudança e tanto, cheia de expectativas, sonhos e novos desafios. Mas também é a realização de algo muito especial: construir a nossa vida juntos.</p>
+        <p>Por isso, queremos aproveitar cada instante dessa celebração ao lado de vocês. Mais do que comemorar o nosso casamento, queremos celebrar o amor, os laços que construímos e todas as pessoas que, de alguma forma, nos ajudaram a chegar até aqui.</p>
+        <p>A distância pode até mudar os encontros, mas nunca o carinho e o lugar que cada um de vocês ocupa em nossas vidas.</p>
+        <p>Fica aqui o nosso mais sincero obrigado por fazerem parte dessa história.</p>
+        <p>E, em vez de uma despedida, preferimos dizer: até daqui a pouco!</p>
+        
+        <div class="assinatura">
+            Com todo o nosso carinho,<br>
+            Layla e André
         </div>
-
-        <button class="btn-entrar" onclick="revelarConvite()">
-            Ver Detalhes e Lista de Presentes ➔
-        </button>
     </div>
 
+    <button class="btn-entrar" onclick="revelarConvite()">
+        Ver Detalhes e Lista de Presentes ➔
+    </button>
+</div>
 
-    <!-- ETAPA 2: CONTEÚDO PRINCIPAL (Revelado após clicar no botão) -->
-    <div id="conteudo-principal">
+<!-- ETAPA 2: CONTEÚDO PRINCIPAL (Revelado após clicar no botão) -->
+<div id="conteudo-principal">
 
-        <!-- CABEÇALHO -->
-        <header>
-            <img src="img/monograma.png" alt="Monograma André e Layla" class="monograma">
-            <h1>Layla e André</h1>
-            <p>A Bênção Nupcial — 16 de Janeiro de 2027</p>
-        </header>
+    <!-- CABEÇALHO -->
+    <header>
+    <img src="img/monograma.png" alt="Monograma André e Layla" class="monograma">
+    <h1>Layla e André</h1>
+    <p>A Bênção Nupcial — 16 de Janeiro de 2027</p>
+    </header>
 
-        <!-- INFORMAÇÕES DO EVENTO (APENAS CERIMÔNIA) -->
-        <section id="informacoes">
-            <h2>A Cerimônia</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: #555;">Queridos amigos e familiares, é com imensa alegria que convidamos vocês para testemunharem o nosso sim perante o altar.</p>
-            
-            <div style="display: flex; justify-content: center;">
-                <div class="card-local" style="max-width: 500px; width: 100%;">
-                    <h3>💍 Cerimônia Religiosa</h3>
-                    <p><strong>Local:</strong> Igreja São Sebastião</p>
-                    <p><strong>Endereço:</strong> [Endereço Completo da Igreja]</p>
-                    <p><strong>Horário:</strong> Dia 16 de janeiro às 14:00 (Sugerimos chegar com 20 min de antecedência)</p>
-                    
-                    <!-- Botão do Google Maps -->
-                    <a href="https://maps.google.com/?q=Igreja+Sao+Sebastiao+Juiz+de+Fora" target="_blank" class="btn-maps">
-                        📍 Ver no Google Maps
-                    </a>
-                </div>
-            </div>
-        </section>
+    <!-- INFORMAÇÕES DO EVENTO (APENAS CERIMÔNIA) -->
+    <section id="informacoes">
+    <h2>A Cerimônia</h2>
+    <p style="text-align: center; margin-bottom: 30px; color: #555;">Queridos amigos e familiares, é com imensa alegria que convidamos vocês para testemunharem o nosso sim perante o altar.</p>
 
-        <!-- SEÇÃO DA LISTA DE PRESENTES -->
-        <section id="presentes">
-            <h2>Lista de Presentes</h2>
-            <p>Sua presença na nossa cerimônia é o maior presente que poderíamos receber! Mas, se desejar contribuir com os nossos planos, clique em um dos itens abaixo para presentear via PIX:</p>
-            
-            <!-- GRADE DE PRESENTES -->
-            <div class="grid-presentes">
-                <div class="card-presente" onclick="abrirModal('Renovação do Noivo', 'qr-50.png', 'R$ 50,00', 'COLE_AQUI_O_COPIA_E_COLA_DE_50')">
-                    <span class="emoji-presente">🩲</span>
-                    <h4>Renovação do Guarda-roupa do Noivo</h4>
-                    <p>Ajuda a não andar mais mulambo.</p>
-                    <strong>R$ 50,00</strong>
-                </div>
+    <div style="display: flex; justify-content: center;">
+    <div class="card-local" style="max-width: 500px; width: 100%;">
+    <h3>💍 Cerimônia Religiosa</h3>
+    <p><strong>Local:</strong> Igreja São Sebastião</p>
+    <p><strong>Endereço:</strong> [Endereço Completo da Igreja]</p>
+    <p><strong>Horário:</strong> Dia 16 de janeiro às 14:00 (Sugerimos chegar com 20 min de antecedência)</p>
 
-                <div class="card-presente" onclick="abrirModal('Combustível Fitness', 'qr-75.png', 'R$ 75,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento520400005303986540575.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCzbhcBrjyyV6ghL4CuPtSO6304D441')">
-                    <span class="emoji-presente">🥜</span>
-                    <h4>Combustível Fitness</h4>
-                    <p>Patrocinar o estoque de Whey e creatina pros noivos.</p>
-                    <strong>R$ 75,00</strong>
-                </div>
+    <!-- Botão do Google Maps -->
+    <a href="https://maps.google.com/?q=Igreja+Sao+Sebastiao+Juiz+de+Fora" target="_blank" class="btn-maps">
+    📍 Ver no Google Maps
+    </a>
+    </div>
+    </div>
+    </section>
 
-                <div class="card-presente" onclick="abrirModal('Paz Matinal', 'qr-100.png', 'R$ 100,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406100.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCSbztF8o6ycSG9rluqnuFu6304B1A3')">
-                    <span class="emoji-presente">☕</span>
-                    <h4>Paz Matinal</h4>
-                    <p>Pó de café excelente para começar bem o dia.</p>
-                    <strong>R$ 100,00</strong>
-                </div>
+    <!-- SEÇÃO DA LISTA DE PRESENTES -->
+    <section id="presentes">
+    <h2>Lista de Presentes</h2>
+    <p>Sua presença na nossa cerimônia é o maior presente que poderíamos receber! Mas, se desejar contribuir com os nossos planos, clique em um dos itens abaixo para presentear via PIX:</p>
 
-                <div class="card-presente" onclick="abrirModal('Manutenção da Armadura', 'qr-150.png', 'R$ 150,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406150.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCHXlioe3TQ0HG47uGfuFfj63048073')">
-                    <span class="emoji-presente">🐟</span>
-                    <h4>Comida típica de Boa Vista</h4>
-                    <p>Ajudar a pagar um prato de Matrinxã em BV-RR</p>
-                    <strong>R$ 150,00</strong>
-                </div>
-
-                <div class="card-presente" onclick="abrirModal('Gasolina da Lua de Mel', 'qr-200.png', 'R$ 200,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406200.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCfGahlIFvUMZmXkhf1q5cn63048022')">
-                    <span class="emoji-presente">🚗</span>
-                    <h4>Gasolina da Lua de Mel</h4>
-                    <p>Um tanque cheio para nossa viagem de carro!</p>
-                    <strong>R$ 200,00</strong>
-                </div>
-
-                <div class="card-presente" onclick="abrirModal('Equipamentos de Sobrevivência', 'qr-300.png', 'R$ 300,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406300.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCLaafGj1c4i1E0Jf9GZv7y6304F285')">
-                    <span class="emoji-presente">🎒</span>
-                    <h4>Sobrevivência</h4>
-                    <p>Investir em equipamentos para nossas trilhas.</p>
-                    <strong>R$ 300,00</strong>
-                </div>
-
-                <div class="card-presente" onclick="abrirModal('Jantar de Recém-casados', 'qr-400.png', 'R$ 400,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406400.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCqCvkHiY50wBklSogMLdP56304E078')">
-                    <span class="emoji-presente">🍷</span>
-                    <h4>Jantar Romântico</h4>
-                    <p>Prometemos não gastar tudo em comida de rua dessa vez!</p>
-                    <strong>R$ 400,00</strong>
-                </div>
-
-                <div class="card-presente" onclick="abrirModal('Segurança da Noiva', 'qr-500.png', 'R$ 500,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406500.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCrEB8v54b62D9iiFxdQjaj630459CE')">
-                    <span class="emoji-presente">🏠</span>
-                    <h4>Casa nova</h4>
-                    <p>Ajudar nas próximas mudanças .</p>
-                    <strong>R$ 500,00</strong>
-                </div>
-
-                <div class="card-presente" onclick="abrirModal('Fundo do Primeiro Carro', 'qr-750.png', 'R$ 750,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406750.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCTcpaPPyv3vju2Gs0iDv476304F270')">
-                    <span class="emoji-presente">🚘</span>
-                    <h4>Primeiro Carro</h4>
-                    <p>Ajudinha pra gente se despedir do BlaBlaCar e ClickBus!</p>
-                    <strong>R$ 750,00</strong>
-                </div>
-
-                <div class="card-presente" onclick="abrirModal('Investidor Anjo', 'qr-1000.png', 'R$ 1.000,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento52040000530398654071000.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCPCsJjJ4HS8RSOKpC414J76304448E')">
-                    <span class="emoji-presente">👼</span>
-                    <h4>Investidor Anjo</h4>
-                    <p>Ajuda direta na faculdade dos filhos</p>
-                    <strong>R$ 1.000,00</strong>
-                </div>
-            </div>
-        </section>
-
-        <!-- JANELA FLUTUANTE DO QR CODE E PIX COPIA E COLA -->
-        <div id="modal-presente" class="modal-overlay">
-            <div class="modal-content" style="max-width: 400px; text-align: center;">
-                <span class="fechar-modal" onclick="fecharModal()">&times;</span>
-                <h3 id="modal-titulo" style="color: #4a4238; margin-top: 0;">Título</h3>
-                <p style="font-size: 0.95em; color: #555;">Muito obrigado por nos presentear! ❤️</p>
-                
-                <!-- QR Code -->
-                <img id="modal-img-qr" src="" alt="QR Code Pix" width="150" style="margin: 5px 0; border-radius: 8px;">
-                <p style="font-size: 1.1em; color: #2e7d32; margin: 5px 0;"><strong>Valor: <span id="modal-valor"></span></strong></p>
-                
-                <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
-                
-                <!-- Código Pix Copia e Cola específico do item -->
-                <p style="font-size: 0.85em; color: #666; margin-bottom: 3px;">Está pelo celular? Copie o código Pix abaixo:</p>
-                <div class="pix-copia-cola-box" id="texto-pix"></div>
-                
-                <button class="btn-copiar" onclick="copiarChavePix()">
-                    📋 Copiar Código Pix
-                </button>
-                <p id="aviso-copiado" style="font-size: 0.8em; color: #2e7d32; margin-top: 5px; display: none;">✔ Código Pix copiado com sucesso!</p>
-            </div>
-        </div>
-
+    <!-- GRADE DE PRESENTES -->
+    <div class="grid-presentes">
+    <div class="card-presente" onclick="abrirModal('Renovação do Noivo', 'qr-50.png', 'R$ 50,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento520400005303986540550.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCKAK2TtBZLiu54DkXDmujJ63049EF9')">
+    <span class="emoji-presente">🩲</span>
+    <h4>Renovação do Guarda-roupa do Noivo</h4>
+    <p>Ajuda a não andar mais mulambo.</p>
+    <strong>R$ 50,00</strong>
     </div>
 
-    <!-- SCRIPTS -->
-    <script>
-        function revelarConvite() {
-            // Esconde a carta com uma transição e mostra o conteúdo do site
-            document.getElementById('pagina-carta').style.display = 'none';
-            document.getElementById('conteudo-principal').style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    <div class="card-presente" onclick="abrirModal('Combustível Fitness', 'qr-75.png', 'R$ 75,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento520400005303986540575.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCzbhcBrjyyV6ghL4CuPtSO6304D441')">
+    <span class="emoji-presente">🥜</span>
+    <h4>Combustível Fitness</h4>
+    <p>Patrocinar o estoque de Whey e creatina pros noivos.</p>
+    <strong>R$ 75,00</strong>
+    </div>
 
-        function abrirModal(titulo, imagemQr, valor, copiaECola) {
-            document.getElementById('modal-titulo').innerText = titulo;
-            document.getElementById('modal-img-qr').src = 'img/' + imagemQr;
-            document.getElementById('modal-valor').innerText = valor;
-            document.getElementById('texto-pix').innerText = copiaECola;
-            document.getElementById('modal-presente').style.display = 'flex';
-            document.getElementById('aviso-copiado').style.display = 'none';
-        }
+    <div class="card-presente" onclick="abrirModal('Paz Matinal', 'qr-100.png', 'R$ 100,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406100.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCSbztF8o6ycSG9rluqnuFu6304B1A3')">
+    <span class="emoji-presente">☕</span>
+    <h4>Paz Matinal</h4>
+    <p>Pó de café excelente para começar bem o dia.</p>
+    <strong>R$ 100,00</strong>
+    </div>
 
-        function fecharModal() {
-            document.getElementById('modal-presente').style.display = 'none';
-        }
+    <div class="card-presente" onclick="abrirModal('Manutenção da Armadura', 'qr-150.png', 'R$ 150,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406150.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCHXlioe3TQ0HG47uGfuFfj63048073')">
+    <span class="emoji-presente">🐟</span>
+    <h4>Comida típica de Boa Vista</h4>
+    <p>Ajudar a pagar um prato de Matrinxã em BV-RR</p>
+    <strong>R$ 150,00</strong>
+    </div>
 
-        function copiarChavePix() {
-            const textoPix = document.getElementById('texto-pix').innerText;
-            navigator.clipboard.writeText(textoPix).then(() => {
-                const aviso = document.getElementById('aviso-copiado');
-                aviso.style.display = 'block';
-                setTimeout(() => {
-                    aviso.style.display = 'none';
-                }, 3000);
-            }).catch(err => {
-                alert('Erro ao copiar o código. Tente selecionar manualmente.');
-            });
-        }
+    <div class="card-presente" onclick="abrirModal('Gasolina da Lua de Mel', 'qr-200.png', 'R$ 200,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406200.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCfGahlIFvUMZmXkhf1q5cn63048022')">
+    <span class="emoji-presente">🚗</span>
+    <h4>Gasolina da Lua de Mel</h4>
+    <p>Um tanque cheio para nossa viagem de carro!</p>
+    <strong>R$ 200,00</strong>
+    </div>
 
-        // Efeito de transição fluida ao rolar a página
-        document.addEventListener("DOMContentLoaded", function() {
-            const sections = document.querySelectorAll("section");
+    <div class="card-presente" onclick="abrirModal('Equipamentos de Sobrevivência', 'qr-300.png', 'R$ 300,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406300.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCLaafGj1c4i1E0Jf9GZv7y6304F285')">
+    <span class="emoji-presente">🎒</span>
+    <h4>Sobrevivência</h4>
+    <p>Investir em equipamentos para nossas trilhas.</p>
+    <strong>R$ 300,00</strong>
+    </div>
 
-            const observer = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visivel");
-                    }
-                });
-            }, {
-                threshold: 0.15 
-            });
+    <div class="card-presente" onclick="abrirModal('Jantar de Recém-casados', 'qr-400.png', 'R$ 400,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406400.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCqCvkHiY50wBklSogMLdP56304E078')">
+    <span class="emoji-presente">🍷</span>
+    <h4>Jantar Romântico</h4>
+    <p>Prometemos não gastar tudo em comida de rua dessa vez!</p>
+    <strong>R$ 400,00</strong>
+    </div>
 
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+    <div class="card-presente" onclick="abrirModal('Segurança da Noiva', 'qr-500.png', 'R$ 500,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406500.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCrEB8v54b62D9iiFxdQjaj630459CE')">
+    <span class="emoji-presente">🏠</span>
+    <h4>Casa nova</h4>
+    <p>Ajudar nas próximas mudanças .</p>
+    <strong>R$ 500,00</strong>
+    </div>
+
+    <div class="card-presente" onclick="abrirModal('Fundo do Primeiro Carro', 'qr-750.png', 'R$ 750,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406750.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCTcpaPPyv3vju2Gs0iDv476304F270')">
+    <span class="emoji-presente">🚘</span>
+    <h4>Primeiro Carro</h4>
+    <p>Ajudinha pra gente se despedir do BlaBlaCar e ClickBus!</p>
+    <strong>R$ 750,00</strong>
+    </div>
+
+    <div class="card-presente" onclick="abrirModal('Investidor Anjo', 'qr-1000.png', 'R$ 1.000,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento52040000530398654071000.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCPCsJjJ4HS8RSOKpC414J76304448E')">
+    <span class="emoji-presente">👼</span>
+    <h4>Investidor Anjo</h4>
+    <p>Ajuda direta na faculdade dos filhos</p>
+    <strong>R$ 1.000,00</strong>
+    </div>
+    </div>
+    </section>
+
+    <!-- JANELA FLUTUANTE DO QR CODE E PIX COPIA E COLA -->
+    <div id="modal-presente" class="modal-overlay">
+    <div class="modal-content" style="max-width: 400px; text-align: center;">
+    <span class="fechar-modal" onclick="fecharModal()">&times;</span>
+    <h3 id="modal-titulo" style="color: #4a4238; margin-top: 0;">Título</h3>
+    <p style="font-size: 0.95em; color: #555;">Muito obrigado por nos presentear! ❤️</p>
+
+    <!-- QR Code para quem abrir no computador -->
+    <img id="modal-img-qr" src="" alt="QR Code Pix" width="150" style="margin: 5px 0; border-radius: 8px;">
+    <p style="font-size: 1.1em; color: #2e7d32; margin: 5px 0;"><strong>Valor: <span id="modal-valor"></span></strong></p>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+
+    <!-- Código Pix Copia e Cola específico do item -->
+    <p style="font-size: 0.85em; color: #666; margin-bottom: 3px;">Está pelo celular? Copie o código Pix abaixo:</p>
+    <div class="pix-copia-cola-box" id="texto-pix"></div>
+
+    <button class="btn-copiar" onclick="copiarChavePix()">
+    📋 Copiar Código Pix
+    </button>
+    <p id="aviso-copiado" style="font-size: 0.8em; color: #2e7d32; margin-top: 5px; display: none;">✔ Código Pix copiado com sucesso!</p>
+    </div>
+    </div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script>
+function revelarConvite() {
+    document.getElementById('pagina-carta').style.display = 'none';
+    document.getElementById('conteudo-principal').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function abrirModal(titulo, imagemQr, valor, copiaECola) {
+    document.getElementById('modal-titulo').innerText = titulo;
+    document.getElementById('modal-img-qr').src = 'img/' + imagemQr;
+    document.getElementById('modal-valor').innerText = valor;
+    document.getElementById('texto-pix').innerText = copiaECola;
+    document.getElementById('modal-presente').style.display = 'flex';
+    document.getElementById('aviso-copiado').style.display = 'none';
+}
+
+function fecharModal() {
+    document.getElementById('modal-presente').style.display = 'none';
+}
+
+function copiarChavePix() {
+    const textoPix = document.getElementById('texto-pix').innerText;
+    navigator.clipboard.writeText(textoPix).then(() => {
+        const aviso = document.getElementById('aviso-copiado');
+        aviso.style.display = 'block';
+        setTimeout(() => {
+            aviso.style.display = 'none';
+        }, 3000);
+    }).catch(err => {
+        alert('Erro ao copiar o código. Tente selecionar manualmente.');
+    });
+}
+
+// Efeito de transição fluida ao rolar a página
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visivel");
+            }
         });
-    </script>
+    }, {
+        threshold: 0.15 
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+</script>
 </body>
 </html>
