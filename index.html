@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerimônia Religiosa - 16 de Janeiro</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos adicionais para o botão e caixa de Pix copia e cola */
+        .pix-copia-cola-box {
+            background-color: #f7f5f0;
+            border: 1px dashed #b89753;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 15px 0;
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #333;
+        }
+        .btn-copiar {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+        }
+        .btn-copiar:hover {
+            background-color: #235d26;
+        }
+    </style>
 </head>
 <body>
 
@@ -38,7 +70,7 @@
     <!-- SEÇÃO DA LISTA DE PRESENTES -->
     <section id="presentes">
         <h2>Lista de Presentes</h2>
-        <p>Sua presença na nossa cerimônia é o maior presente que poderíamos receber! Mas, se desejar contribuir com os nossos planos, clique em um dos itens abaixo para ver o QR Code via PIX:</p>
+        <p>Sua presença na nossa cerimônia é o maior presente que poderíamos receber! Mas, se desejar contribuir com os nossos planos, clique em um dos itens abaixo para presentear via PIX:</p>
         
         <!-- GRADE DE PRESENTES -->
         <div class="grid-presentes">
@@ -119,16 +151,27 @@
         </div>
     </section>
 
-    <!-- JANELA FLUTUANTE DO QR CODE -->
+    <!-- JANELA FLUTUANTE DO QR CODE E PIX COPIA E COLA -->
     <div id="modal-presente" class="modal-overlay">
-        <div class="modal-content">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
             <span class="fechar-modal" onclick="fecharModal()">&times;</span>
             <h3 id="modal-titulo" style="color: #4a4238; margin-top: 0;">Título</h3>
-            <p>Muito obrigado por nos presentear com este item! ❤️</p>
-            <img id="modal-img-qr" src="" alt="QR Code Pix" width="200" style="margin: 15px 0; border-radius: 10px;">
-            <p style="font-size: 1.2em; color: #2e7d32;"><strong>Valor: <span id="modal-valor"></span></strong></p>
-            <p style="font-size: 0.9em; color: #666;">Chave PIX: acnascimento2010@gmail.com</p>
-            <p style="font-size: 0.8em; color: #888;">(Abra o app do seu banco e escaneie o código acima)</p>
+            <p style="font-size: 0.95em; color: #555;">Muito obrigado por nos presentear! ❤️</p>
+            
+            <!-- QR Code (Mantido caso abram pelo computador/outro aparelho) -->
+            <img id="modal-img-qr" src="" alt="QR Code Pix" width="160" style="margin: 10px 0; border-radius: 8px;">
+            <p style="font-size: 1.1em; color: #2e7d32; margin: 5px 0;"><strong>Valor: <span id="modal-valor"></span></strong></p>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+            
+            <!-- Opção Pix Copia e Cola para Celular -->
+            <p style="font-size: 0.85em; color: #666; margin-bottom: 5px;">Está pelo celular? Copie a chave Pix abaixo:</p>
+            <div class="pix-copia-cola-box" id="texto-pix">acnascimento2010@gmail.com</div>
+            
+            <button class="btn-copiar" onclick="copiarChavePix()">
+                📋 Copiar Chave Pix
+            </button>
+            <p id="aviso-copiado" style="font-size: 0.8em; color: #2e7d32; margin-top: 5px; display: none;">✔ Chave copiada com sucesso!</p>
         </div>
     </div>
 
@@ -139,10 +182,24 @@
             document.getElementById('modal-img-qr').src = 'img/' + imagemQr;
             document.getElementById('modal-valor').innerText = valor;
             document.getElementById('modal-presente').style.display = 'flex';
+            document.getElementById('aviso-copiado').style.display = 'none';
         }
 
         function fecharModal() {
             document.getElementById('modal-presente').style.display = 'none';
+        }
+
+        function copiarChavePix() {
+            const textoPix = document.getElementById('texto-pix').innerText;
+            navigator.clipboard.writeText(textoPix).then(() => {
+                const aviso = document.getElementById('aviso-copiado');
+                aviso.style.display = 'block';
+                setTimeout(() => {
+                    aviso.style.display = 'none';
+                }, 3000);
+            }).catch(err => {
+                alert('Erro ao copiar a chave. Tente selecionar manualmente.');
+            });
         }
 
         // Efeito de transição fluida ao rolar a página
