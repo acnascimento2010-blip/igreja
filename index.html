@@ -31,9 +31,9 @@
 }
 
 .carta-card h1 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     text-align: center;
-    color: #2c3e50;
+    color: #4a4238;
     margin-top: 0;
     font-size: 2.5rem;
 }
@@ -47,15 +47,15 @@
 
 .assinatura {
     text-align: right;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-style: italic;
-    color: #b89753;
+    color: #8b6f56;
     margin-top: 30px;
 }
 
 .btn-entrar {
-    background-color: #b89753;
+    background-color: #4a4238;
     color: white;
     border: none;
     padding: 15px 35px;
@@ -70,7 +70,7 @@
 }
 
 .btn-entrar:hover {
-    background-color: #9f8045;
+    background-color: #383129;
     transform: translateY(-2px);
 }
 
@@ -149,132 +149,130 @@
 
     <!-- CABEÇALHO -->
     <header>
-    <img src="img/monograma.png" alt="Monograma André e Layla" class="monograma">
-    <h1>Layla e André</h1>
-    <p>A Bênção Nupcial</p>
+        <img src="img/monograma.png" alt="Monograma André e Layla" class="monograma">
+        <h1>Layla e André</h1>
+        <p>A Bênção Nupcial</p>
     </header>
 
-    <!-- INFORMAÇÕES DO EVENTO (APENAS CERIMÔNIA) -->
+    <!-- INFORMAÇÕES DO EVENTO (CERIMÔNIA ISOLADA E CENTRALIZADA) -->
     <section id="informacoes">
-    <h2>A Cerimônia</h2>
-    <p style="text-align: center; margin-bottom: 30px; color: #555;">Queridos amigos e familiares, é com imensa alegria que convidamos vocês para testemunharem o nosso sim perante o altar.</p>
+        <h2>A Cerimônia</h2>
+        <p style="text-align: center; margin-bottom: 25px; color: #555; font-size: 0.95em;">Queridos amigos e familiares, é com imensa alegria que convidamos vocês para testemunharem o nosso sim perante o altar.</p>
 
-    <div style="display: flex; justify-content: center;">
-    <div class="card-local" style="max-width: 500px; width: 100%;">
-    <h3>💍 Cerimônia Religiosa</h3>
-    <p><strong>Local:</strong> Igreja São Sebastião</p>
-    <p><strong>Endereço:</strong> Praça Hermenegildo Vilaça - Centro, Juiz de Fora - MG, 36015-510</p>
-    <p><strong>Horário:</strong> Dia 16 de janeiro às 11:00 (Sugerimos chegar com 20 min de antecedência)</p>
+        <div class="card-local" style="max-width: 100%; width: 100%; box-sizing: border-box;">
+            <h3>💍 Cerimônia Religiosa</h3>
+            <p><strong>Local:</strong> Igreja São Sebastião</p>
+            <p><strong>Endereço:</strong> Praça Hermenegildo Vilaça - Centro, Juiz de Fora - MG, 36015-510</p>
+            <p><strong>Horário:</strong> Dia 16 de janeiro às 11:00 (Sugerimos chegar com 20 min de antecedência)</p>
 
-    <!-- Botão do Google Maps -->
-    <a href="https://maps.google.com/?q=Igreja+Sao+Sebastiao+Juiz+de+Fora" target="_blank" class="btn-maps">
-    📍 Ver no Google Maps
-    </a>
-    </div>
-    </div>
+            <!-- Botão do Google Maps -->
+            <a href="https://maps.google.com/?q=Igreja+Sao+Sebastiao+Juiz+de+Fora" target="_blank" class="btn-maps">
+                📍 Ver no Google Maps
+            </a>
+        </div>
     </section>
 
     <!-- SEÇÃO DA LISTA DE PRESENTES -->
     <section id="presentes">
-    <h2>Lista de Presentes</h2>
-    <p>Sua presença na nossa cerimônia é o maior presente que poderíamos receber! Mas, se desejar contribuir com os nossos planos, clique em um dos itens abaixo para presentear via PIX:</p>
+        <h2>Lista de Presentes</h2>
+        <p>Sua presença na nossa cerimônia é o maior presente que poderíamos receber! Mas, se desejar contribuir com os nossos planos, clique em um dos itens abaixo para presentear via PIX:</p>
 
-    <!-- GRADE DE PRESENTES -->
-    <div class="grid-presentes">
-    <div class="card-presente" onclick="abrirModal('Renovação do Noivo', 'qr-50.png', 'R$ 50,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento520400005303986540550.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCKAK2TtBZLiu54DkXDmujJ63049EF9')">
-    <span class="emoji-presente">🩲</span>
-    <h4>Renovação do Guarda-roupa do Noivo</h4>
-    <p>Ajuda a não andar mais mulambo.</p>
-    <strong>R$ 50,00</strong>
-    </div>
+        <!-- GRADE DE PRESENTES -->
+        <div class="grid-presentes">
+            <div class="card-presente" onclick="abrirModal('Renovação do Noivo', 'qr-50.png', 'R$ 50,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento520400005303986540550.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCKAK2TtBZLiu54DkXDmujJ63049EF9')">
+                <span class="emoji-presente">🩲</span>
+                <h4>Renovação do Guarda-roupa do Noivo</h4>
+                <p>Ajuda a não andar mais mulambo.</p>
+                <strong>R$ 50,00</strong>
+            </div>
 
-    <div class="card-presente" onclick="abrirModal('Combustível Fitness', 'qr-75.png', 'R$ 75,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento520400005303986540575.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCzbhcBrjyyV6ghL4CuPtSO6304D441')">
-    <span class="emoji-presente">🥜</span>
-    <h4>Combustível Fitness</h4>
-    <p>Patrocinar o estoque de Whey e creatina pros noivos.</p>
-    <strong>R$ 75,00</strong>
-    </div>
+            <div class="card-presente" onclick="abrirModal('Combustível Fitness', 'qr-75.png', 'R$ 75,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento520400005303986540575.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCzbhcBrjyyV6ghL4CuPtSO6304D441')">
+                <span class="emoji-presente">🥜</span>
+                <h4>Combustível Fitness</h4>
+                <p>Patrocinar o estoque de Whey e creatina pros noivos.</p>
+                <strong>R$ 75,00</strong>
+            </div>
 
-    <div class="card-presente" onclick="abrirModal('Paz Matinal', 'qr-100.png', 'R$ 100,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406100.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCSbztF8o6ycSG9rluqnuFu6304B1A3')">
-    <span class="emoji-presente">☕</span>
-    <h4>Paz Matinal</h4>
-    <p>Pó de café excelente para começar bem o dia.</p>
-    <strong>R$ 100,00</strong>
-    </div>
+            <div class="card-presente" onclick="abrirModal('Paz Matinal', 'qr-100.png', 'R$ 100,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406100.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCSbztF8o6ycSG9rluqnuFu6304B1A3')">
+                <span class="emoji-presente">☕</span>
+                <h4>Paz Matinal</h4>
+                <p>Pó de café excelente para começar bem o dia.</p>
+                <strong>R$ 100,00</strong>
+            </div>
 
-    <div class="card-presente" onclick="abrirModal('Manutenção da Armadura', 'qr-150.png', 'R$ 150,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406150.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCHXlioe3TQ0HG47uGfuFfj63048073')">
-    <span class="emoji-presente">🐟</span>
-    <h4>Comida típica de Boa Vista</h4>
-    <p>Ajudar a pagar um prato de Matrinxã em BV-RR</p>
-    <strong>R$ 150,00</strong>
-    </div>
+            <div class="card-presente" onclick="abrirModal('Manutenção da Armadura', 'qr-150.png', 'R$ 150,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406150.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCHXlioe3TQ0HG47uGfuFfj63048073')">
+                <span class="emoji-presente">🐟</span>
+                <h4>Comida típica de Boa Vista</h4>
+                <p>Ajudar a pagar um prato de Matrinxã em BV-RR</p>
+                <strong>R$ 150,00</strong>
+            </div>
 
-    <div class="card-presente" onclick="abrirModal('Gasolina da Lua de Mel', 'qr-200.png', 'R$ 200,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406200.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCfGahlIFvUMZmXkhf1q5cn63048022')">
-    <span class="emoji-presente">🚗</span>
-    <h4>Gasolina da Lua de Mel</h4>
-    <p>Um tanque cheio para nossa viagem de carro!</p>
-    <strong>R$ 200,00</strong>
-    </div>
+            <div class="card-presente" onclick="abrirModal('Gasolina da Lua de Mel', 'qr-200.png', 'R$ 200,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406200.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCfGahlIFvUMZmXkhf1q5cn63048022')">
+                <span class="emoji-presente">🚗</span>
+                <h4>Gasolina da Lua de Mel</h4>
+                <p>Um tanque cheio para nossa viagem de carro!</p>
+                <strong>R$ 200,00</strong>
+            </div>
 
-    <div class="card-presente" onclick="abrirModal('Equipamentos de Sobrevivência', 'qr-300.png', 'R$ 300,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406300.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCLaafGj1c4i1E0Jf9GZv7y6304F285')">
-    <span class="emoji-presente">🎒</span>
-    <h4>Sobrevivência</h4>
-    <p>Investir em equipamentos para nossas trilhas.</p>
-    <strong>R$ 300,00</strong>
-    </div>
+            <div class="card-presente" onclick="abrirModal('Equipamentos de Sobrevivência', 'qr-300.png', 'R$ 300,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406300.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCLaafGj1c4i1E0Jf9GZv7y6304F285')">
+                <span class="emoji-presente">🎒</span>
+                <h4>Sobrevivência</h4>
+                <p>Investir em equipamentos para nossas trilhas.</p>
+                <strong>R$ 300,00</strong>
+            </div>
 
-    <div class="card-presente" onclick="abrirModal('Jantar de Recém-casados', 'qr-400.png', 'R$ 400,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406400.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCqCvkHiY50wBklSogMLdP56304E078')">
-    <span class="emoji-presente">🍷</span>
-    <h4>Jantar Romântico</h4>
-    <p>Prometemos não gastar tudo em comida de rua dessa vez!</p>
-    <strong>R$ 400,00</strong>
-    </div>
+            <div class="card-presente" onclick="abrirModal('Jantar de Recém-casados', 'qr-400.png', 'R$ 400,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406400.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCqCvkHiY50wBklSogMLdP56304E078')">
+                <span class="emoji-presente">🍷</span>
+                <h4>Jantar Romântico</h4>
+                <p>Prometemos não gastar tudo em comida de rua dessa vez!</p>
+                <strong>R$ 400,00</strong>
+            </div>
 
-    <div class="card-presente" onclick="abrirModal('Segurança da Noiva', 'qr-500.png', 'R$ 500,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406500.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCrEB8v54b62D9iiFxdQjaj630459CE')">
-    <span class="emoji-presente">🏠</span>
-    <h4>Casa nova</h4>
-    <p>Ajudar nas próximas mudanças .</p>
-    <strong>R$ 500,00</strong>
-    </div>
+            <div class="card-presente" onclick="abrirModal('Segurança da Noiva', 'qr-500.png', 'R$ 500,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406500.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCrEB8v54b62D9iiFxdQjaj630459CE')">
+                <span class="emoji-presente">🏠</span>
+                <h4>Casa nova</h4>
+                <p>Ajudar nas próximas mudanças .</p>
+                <strong>R$ 500,00</strong>
+            </div>
 
-    <div class="card-presente" onclick="abrirModal('Fundo do Primeiro Carro', 'qr-750.png', 'R$ 750,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406750.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCTcpaPPyv3vju2Gs0iDv476304F270')">
-    <span class="emoji-presente">🚘</span>
-    <h4>Primeiro Carro</h4>
-    <p>Ajudinha pra gente se despedir do BlaBlaCar e ClickBus!</p>
-    <strong>R$ 750,00</strong>
-    </div>
+            <div class="card-presente" onclick="abrirModal('Fundo do Primeiro Carro', 'qr-750.png', 'R$ 750,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento5204000053039865406750.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCTcpaPPyv3vju2Gs0iDv476304F270')">
+                <span class="emoji-presente">🚘</span>
+                <h4>Primeiro Carro</h4>
+                <p>Ajudinha pra gente se despedir do BlaBlaCar e ClickBus!</p>
+                <strong>R$ 750,00</strong>
+            </div>
 
-    <div class="card-presente" onclick="abrirModal('Investidor Anjo', 'qr-1000.png', 'R$ 1.000,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento52040000530398654071000.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCPCsJjJ4HS8RSOKpC414J76304448E')">
-    <span class="emoji-presente">👼</span>
-    <h4>Investidor Anjo</h4>
-    <p>Ajuda direta na faculdade dos filhos</p>
-    <strong>R$ 1.000,00</strong>
-    </div>
-    </div>
+            <div class="card-presente" onclick="abrirModal('Investidor Anjo', 'qr-1000.png', 'R$ 1.000,00', '00020101021226740014BR.GOV.BCB.PIX0126acnascimento2010@gmail.com0222Pagamento acnascimento52040000530398654071000.005802BR5925ANDRE CARDOZO DO NASCIMEN6012JUIZ DE FORA62290525QRCCPCsJjJ4HS8RSOKpC414J76304448E')">
+                <span class="emoji-presente">👼</span>
+                <h4>Investidor Anjo</h4>
+                <p>Ajuda direta na faculdade dos filhos</p>
+                <strong>R$ 1.000,00</strong>
+            </div>
+        </div>
     </section>
 
     <!-- JANELA FLUTUANTE DO QR CODE E PIX COPIA E COLA -->
     <div id="modal-presente" class="modal-overlay">
-    <div class="modal-content" style="max-width: 400px; text-align: center;">
-    <span class="fechar-modal" onclick="fecharModal()">&times;</span>
-    <h3 id="modal-titulo" style="color: #4a4238; margin-top: 0;">Título</h3>
-    <p style="font-size: 0.95em; color: #555;">Muito obrigado por nos presentear! ❤️</p>
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <span class="fechar-modal" onclick="fecharModal()">&times;</span>
+            <h3 id="modal-titulo" style="color: #4a4238; margin-top: 0;">Título</h3>
+            <p style="font-size: 0.95em; color: #555;">Muito obrigado por nos presentear! ❤️</p>
 
-    <!-- QR Code para quem abrir no computador -->
-    <img id="modal-img-qr" src="" alt="QR Code Pix" width="150" style="margin: 5px 0; border-radius: 8px;">
-    <p style="font-size: 1.1em; color: #2e7d32; margin: 5px 0;"><strong>Valor: <span id="modal-valor"></span></strong></p>
+            <!-- QR Code para quem abrir no computador -->
+            <img id="modal-img-qr" src="" alt="QR Code Pix" width="150" style="margin: 5px 0; border-radius: 8px;">
+            <p style="font-size: 1.1em; color: #2e7d32; margin: 5px 0;"><strong>Valor: <span id="modal-valor"></span></strong></p>
 
-    <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
 
-    <!-- Código Pix Copia e Cola específico do item -->
-    <p style="font-size: 0.85em; color: #666; margin-bottom: 3px;">Está pelo celular? Copie o código Pix abaixo:</p>
-    <div class="pix-copia-cola-box" id="texto-pix"></div>
+            <!-- Código Pix Copia e Cola específico do item -->
+            <p style="font-size: 0.85em; color: #666; margin-bottom: 3px;">Está pelo celular? Copie o código Pix abaixo:</p>
+            <div class="pix-copia-cola-box" id="texto-pix"></div>
 
-    <button class="btn-copiar" onclick="copiarChavePix()">
-    📋 Copiar Código Pix
-    </button>
-    <p id="aviso-copiado" style="font-size: 0.8em; color: #2e7d32; margin-top: 5px; display: none;">✔ Código Pix copiado com sucesso!</p>
-    </div>
+            <button class="btn-copiar" onclick="copiarChavePix()">
+                📋 Copiar Código Pix
+            </button>
+            <p id="aviso-copiado" style="font-size: 0.8em; color: #2e7d32; margin-top: 5px; display: none;">✔ Código Pix copiado com sucesso!</p>
+        </div>
     </div>
 
 </div>
